@@ -47,7 +47,7 @@ The project uses a **Random Forest Classifier** and is deployed using **Flask**.
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/IPL_WINNING.git
+git clone https://github.com/Aaru-0653/IPL_winning.git
 cd IPL_WINNING
 
 
