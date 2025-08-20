@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Result</title>
+  <link rel="stylesheet" href="/static/result.css">
+</head>
+<body>
+  <div class="glass-card">
+    <h1 class="title">🏆 Match Prediction</h1>
+    <p class="subtitle">AI says the winner is...</p>
+
+    <!-- Flask se data ayega -->
+    <div class="result-box">
+      <h2 class="winner">{{ prediction_text }}</h2>
+    </div>
+
+    <a href="/" class="btn">🔙 Predict Another Match</a>
+  </div>
+</body>
+</html>

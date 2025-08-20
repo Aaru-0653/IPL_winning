@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPL Winning Predictor</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="glass-card">
+    <h1 class="title">🏏 IPL <span>Winning</span> Predictor</h1>
+    <p class="subtitle">Enter match details & let AI predict the <b>winner ⚡</b></p>
+
+    <form action="/predict" method="post" class="form-card">
+      <label for="team1">Select Team 1:</label>
+      <input type="text" name="team1" placeholder="e.g. Mumbai Indians" required>
+
+      <label for="team2">Select Team 2:</label>
+      <input type="text" name="team2" placeholder="e.g. Chennai Super Kings" required>
+
+      <label for="venue">Venue:</label>
+      <input type="text" name="venue" placeholder="e.g. Wankhede Stadium" required>
+
+      <label for="toss_winner">Toss Winner:</label>
+      <input type="text" name="toss_winner" placeholder="Team who won toss" required>
+
+      <label for="toss_decision">Toss Decision:</label>
+      <select name="toss_decision" required>
+        <option value="bat">Bat</option>
+        <option value="field">Field</option>
+      </select>
+
+      <button type="submit" class="btn">✨ Predict Winner</button>
+    </form>
+  </div>
+</body>
+</html>

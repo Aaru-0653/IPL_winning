@@ -1,0 +1,140 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/static/bg-tech.png") no-repeat center center/cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.438);
+  z-index: -1;
+}
+
+/* Background blur layer */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(15px);
+  opacity: 0.9;
+  transition: filter 0.6s ease;
+  z-index: -2;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 700px;
+  text-align: center;
+  color: blue;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background 0.4s ease;
+  z-index: 1;
+}
+
+/* Blur background when card is active */
+.glass-card:hover ~ body::before,
+.glass-card:focus-within ~ body::before {
+  filter: blur(150px);
+ background: rgba(4, 9, 46, 0.836);
+}
+
+/* Pop effect */
+.glass-card:hover,
+.glass-card:focus-within {
+  transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.15);
+}
+/* Title */
+.title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #1e11d6, #dd1212);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: #ddd;
+  margin-bottom: 25px;
+}
+
+/* Winner Result */
+.result-box {
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  margin-bottom: 25px;
+  animation: glow 2s infinite alternate ease-in-out;
+}
+
+.winner {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #061172, #e71d1d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(135deg, #f17bd0, #3075ec);
+  color: #1f2937;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(251, 194, 235, 0.6);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(166, 193, 238, 0.8);
+  }
+}
